@@ -9,7 +9,7 @@ module.exports = {
         process.env.SERVER_SECRET,
         {
           expiresIn: '200d',
-          issuer:    'ChadApp',
+          issuer:    'CodersOnly',
         },
         (err, data) => err ? reject(err) : resolve(data),
       ),
