@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(tokenService.receiveToken);
+app.use(controller.verifySite);
 
 app.use('/api', dataRouter);
 app.use('/auth', authRouter);
