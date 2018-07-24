@@ -4,7 +4,7 @@ const model = require('./models');
 
 module.exports = {
   verifySite(req, res, next) {
-    if(req.body.secret === process.env.REACT_APP_SECRET) {
+    if(req.body.secret === process.env.HANDSHAKE) {
       console.log('authorized api hit')
       next()
     } else {

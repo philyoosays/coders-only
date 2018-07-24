@@ -89,12 +89,4 @@ module.exports = {
       },
     ];
   },
-
-  killArray(user) {
-    if(Array.isArray(user)) {
-      return user[0];
-    } else {
-      return user;
-    }
-  }
 };

@@ -2,14 +2,14 @@ import { AsyncStorage } from 'react-native';
 
 const TokenService = {
   async save(token) {
-    await AsyncStorage.setItem('@ChadApp:authToken', token.token);
+    await AsyncStorage.setItem('@CodersOnly:authToken', token.token);
   },
   read() {
     // console.log(window.localStorage.getItem('authToken'))
-    return AsyncStorage.getItem('@ChadApp:authToken');
+    return AsyncStorage.getItem('@CodersOnly:authToken');
   },
   async destroy() {
-    await AsyncStorage.removeItem('@ChadApp:authToken');
+    await AsyncStorage.removeItem('@CodersOnly:authToken');
   }
 };
 
