@@ -5,7 +5,7 @@ const TokenService = require('./TokenService');
 module.exports = {
   async isValidUser(req, res, next) {
     try {
-      const user = await model.findOneUser(req.body.username.toLowerCase());
+      const user = await model.findOneUser(req.body.email.toLowerCase());
       console.log('user', user)
       res.locals.user = user[0];
       res.locals.ispassgood = await bcrypt.compare(req.body.password, user[0].pass_digest);
@@ -29,8 +29,8 @@ module.exports = {
   },
 
   doesUserExist(req, res, next) {
-    req.body.username = req.body.username.toLowerCase();
-    model.findOneUser(req.body.username)
+    req.body.email = req.body.email.toLowerCase();
+    model.findOneUser(req.body.email)
       .then(data => {
         if(data.length !== 0){
           res.locals.userExists = true;
@@ -63,7 +63,7 @@ module.exports = {
     TokenService.makeToken({
       role: res.locals.user.account_type,
       id: res.locals.user.id,
-      user: res.locals.user.username
+      user: res.locals.user.email
     })
       .then((token) => {
         res.locals.token = token;

@@ -1,19 +1,19 @@
 const db = require('../db/dbConfig')
 
 module.exports = {
-  findOneUser(username) {
+  findOneUser(email) {
     return db.any(`
       SELECT * FROM users
-      WHERE username = $1
-    `, username);
+      WHERE email = $1
+    `, email);
   },
 
   addUser(data) {
     return db.none(`
       INSERT INTO users
-        (fullname, username, birthday, email, profilepic, pass_digest)
+        (fullname, email, birthday, email, profilepic, pass_digest)
       VALUES
-        ($/fullName/, $/username/, $/birthday/, $/email/, $/profilePic/, $/pass_digest/)
+        ($/fullName/, $/email/, $/birthday/, $/email/, $/profilePic/, $/pass_digest/)
     `, data);
   },
 }
