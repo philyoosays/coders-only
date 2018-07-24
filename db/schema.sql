@@ -1,0 +1,14 @@
+-- schema
+
+-- users
+-- name, age, sex, what youre looking for, body type, height, avatar, email, password_digest
+-- city, state, country, zip
+-- interests, likes, dislikes, language, ethnicity
+-- programming language, coding focus, tech stack, code snippet, github, portfolio
+-- dating preferences
+-- employment, wages, network
+-- tag attrtibutes
+-- roles
+-- vote history (swipe left/right)
+-- timestamp NOW
+-- active (boolean)
