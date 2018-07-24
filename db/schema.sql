@@ -32,16 +32,19 @@ CREATE TABLE users (
   state TEXT,
   zipcode TEXT,
   country TEXT,
+  ethnicity TEXT,
+  avatar TEXT,
   pass_digest TEXT,
   language TEXT,
   description TEXT,
   height TEXT,
   body_type TEXT,
-  sexual_interest TEXT,
+  seeking TEXT,
   employment TEXT,
   interests INTEGER REFERENCES interests(id),
   likes TEXT,
   dislikes TEXT,
+  wages TEXT,
   type_of_coder TEXT,
   tech_stack TEXT,
   code_snippet TEXT,
@@ -62,6 +65,6 @@ CREATE TABLE vote_history (
 
 CREATE TABLE interests (
   id SERIAL PRIMARY KEY,
-  interest TEXT,
+  interest TEXT
 )
 
